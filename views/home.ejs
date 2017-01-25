@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <title>HI</title>
+</head>
+<body>
+
+<div id="menu">
+	<nav>
+	<ul>
+		<li><a href="/home">Song Search</a></li>
+		<li><a href="/purchasedsongs">Purchased Songs</a></li>
+	</ul>
+	</nav>
+
+
+	<div id="form">
+		<h2>SEARCH FOR A SONG</h2>
+		<form action="/home" method="post">
+			<input type="text" name="song" placeholder="Enter: ">
+			<br>
+			<input type="submit" name="Search" value="Search">
+		</form>
+	</div>
+</div>
+	<div id="songinfo">
+		<img src="" id="songcover">
+		<h1 id="song"></h1>
+		<h2 id="artist"></h2>
+		<h3 id="album"></h3>
+		<h4 id="price"></h4>
+		<button id="buy" onclick="location.href='/purchasedsongs'">Buy</button>
+		<audio src="" controls></audio>
+
+	</div>
+
+
+</body>
+		<script
+  		src="http://code.jquery.com/jquery-3.1.1.min.js"
+  		integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  		crossorigin="anonymous"></script>
+		<script src="script.js"></script>
+</html>
