@@ -18,8 +18,7 @@ app.get('/home', function(req, res){
 
 app.post('/home', function(req, res){
 	pg.connect(DATABASE_URL, function(err, client, done){
-		client.query(`insert into purchased (song, artist, price) values ()`, function(err, result){
-			res.redirect('/home');
+		client.query(`insert into purchased (song, artist, price) values ('${req.body.song}', '${req.body.artist}', '${req.body.price}')`, function(err, result){
 			done();
 			pg.end();
 		})
