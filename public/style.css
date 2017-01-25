@@ -1,10 +1,10 @@
 body{
-	background-color: pink;
+	background-color: steelblue;
 	margin: 0;
 }
 
 #menu{
-	background-image: url(http://www.rickmeyersmusic.com/photos_media/instrumentsB%26W.jpg);
+	background-image: url(https://static.pexels.com/photos/12544/pexels-photo-12544.jpeg);
 	height: 100vh;
 	background-size: cover;
 	overflow: auto;
@@ -38,31 +38,38 @@ li a:hover {
     background-color: hotpink;
 }
 
-h1, h2, h3, h4{
+h2{
+	text-align: center;
+	color: oldlace;
+	font-size: 40px;
+	font-family: verdana;
+}
+
+#song, #album, #artist, #price{
 	text-align: center;
 	font-size: 30px;
 	color: white;
-}
-
-img{
-	float: left;
-	height: 400px;
-	width: 300px;
+	font-family: verdana;
 }
 
 
-form{
+#form{
 	text-align: center;
 	position: absolute;
-	left: 0;
-	width: 100%;
+	left: 50%;
+	top: 50%;
+	text-transform: 
 	font-size: 25px;
 	font-family: verdana;
+	transform: translate(-50%, -50%);
 }
 
 #songinfo{
 	background-color: hsla(188, 60%, 0%, .4);
-	margin: 20px, auto;
+	margin: 0 auto;
+	overflow: auto;
+	display: inline-block;
+	width: 100%;
 }
 
 input[type=submit]{
@@ -72,6 +79,7 @@ input[type=submit]{
 	text-align: center;
 	text-decoration: none;
 	font-size: 15px;
+	margin: 10px;
 }
 
 input[type=text]{
@@ -79,4 +87,37 @@ input[type=text]{
 	color: hotpink;
 	font-family: verdana;
 	font-size: 15px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: lightpink}
+
+th {
+    background-color: hotpink;
+    color: white;
+}
+
+button{
+	margin: 0 auto;
+}
+
+.divs{
+	text-align: center;
+	width:30.6666666667%;
+	margin: 10px;
+	float: left;
+}
+
+#songcover{
+	width: 70%;
+	margin: 0 auto;
 }

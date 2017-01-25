@@ -16,15 +16,15 @@ app.get('/home', function(req, res){
 	res.render('home');
 })
 
-/*app.post('/home', function(req, res){
+app.post('/home', function(req, res){
 	pg.connect(DATABASE_URL, function(err, client, done){
-		client.query(`insert into purchased(song, artist, price) values ()`, function(err, result){
-			res.redirect('/purchasedsongs');
+		client.query(`insert into purchased (song, artist, price) values ()`, function(err, result){
+			res.redirect('/home');
 			done();
 			pg.end();
 		})
 	})
-})*/
+})
 
 app.get('/purchasedsongs', function(req, res){
 	pg.connect(DATABASE_URL, function(err, client, done){

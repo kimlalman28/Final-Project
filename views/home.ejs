@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="/style.css">
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   <title>HI</title>
 </head>
 <body>
@@ -20,21 +21,40 @@
 
 	<div id="form">
 		<h2>SEARCH FOR A SONG</h2>
-		<form action="/home" method="post">
+		<form action="/home">
 			<input type="text" name="song" placeholder="Enter: ">
 			<br>
 			<input type="submit" name="Search" value="Search">
 		</form>
 	</div>
 </div>
+
+
+
 	<div id="songinfo">
-		<img src="" id="songcover">
-		<h1 id="song"></h1>
-		<h2 id="artist"></h2>
-		<h3 id="album"></h3>
-		<h4 id="price"></h4>
-		<button id="buy" onclick="location.href='/purchasedsongs'">Buy</button>
-		<audio src="" controls></audio>
+		<div class="divs">
+			<img src="" id="songcover" height="300" width="200">
+		</div>
+		
+		<div class="divs">
+			<h1 id="song"></h1>
+			<h2 id="artist"></h2>
+			<h3 id="album"></h3>
+			<h4 id="price"></h4>
+			<form action="/home" method="post">
+				<input type="submit" name="buy" value="Buy">
+			</form>
+		</div>	
+
+		
+		<div class="divs">
+			<h2>Preview</h2>
+			<button id="stop"><i class= "fa fa-stop-circle-o fa-3x" aria-hidden="true"></i></button>
+			<button id="play"><i class= "fa fa-play-circle fa-3x" aria-hidden="true"></i></button>
+			
+		</div>
+		
+		<audio src="" id="audio"></audio>
 
 	</div>
 

@@ -18,14 +18,18 @@
 	</nav>
 
 <h2>Purchased Songs</h2>
+	<table>
+	<th>Song</th>
+	<th>Artist</th>
+	<th>Price</th>
 	<% for(var i=(data.length-1); i>=0; i--) { %>
-	<ul>
-		<li><%= data[i].song %></li>
-		<li><%=data[i].artist%></li>
-		<li><%=data[i].price%></li>
-	</ul>
+		<tr>
+		<td><%= data[i].song %></td>
+		<td><%=data[i].artist%></td>
+		<td><%=data[i].price%></td>
+		</tr>
 	<% } %>
-
+</table>
 
 </body>
 		<script
