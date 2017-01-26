@@ -1,8 +1,19 @@
+$(function () {
+	var menu = $('#menu');
+	var imageArray = ["url(images/pic1.jpg)", "url(images/pic2.jpg)", "url(images/pic3.jpg)", "url(images/pic4.jpg)", "url(images/pic5.jpg)"];
+    var current = 0;
+
+    function nextBackground() {
+        menu.css('background-image', imageArray[current = ++current % imageArray.length]);
+		setTimeout(nextBackground, 4500);
+    }
+    	setTimeout(nextBackground, 4500);
+   		menu.css('background-image', imageArray[0]);
+});
+
 $(document).ready(
 	document.getElementById('songinfo').style.display = 'none'
 	)
-
-
 
 document.getElementById("form").addEventListener("submit", function(e){
 	e.preventDefault();
@@ -22,6 +33,7 @@ document.getElementById("form").addEventListener("submit", function(e){
 			track = response.results[0].trackName;
 			artistname = response.results[0].artistName;
 			trackprice = response.results[0].trackPrice;
+			itunes = response.results[0].trackViewUrl;
 			$("#songinfo").show();
 			console.log(response);
 			$("#song").html("Song: "+ track);
@@ -30,7 +42,6 @@ document.getElementById("form").addEventListener("submit", function(e){
 			$("#price").html("Price: $" + trackprice );
 			$("audio").attr("src", response.results[0].previewUrl);
 			$("#songcover").attr("src", response.results[0].artworkUrl100)
-			console.log(track);
 
 		document.getElementById("add").addEventListener("submit", function(e){
 			e.preventDefault();
@@ -38,12 +49,13 @@ document.getElementById("form").addEventListener("submit", function(e){
 
 			$.ajax({
 				type: 'POST',
-				url: "/home",
+				url: "/songsearch",
 				
 				data: {
 					song: track,
 					artist: artistname,
-					price: trackprice
+					price: trackprice,
+					buyinfo: itunes
 
 				},
 
@@ -54,14 +66,15 @@ document.getElementById("form").addEventListener("submit", function(e){
 	})
 })
 
-var track = document.getElementById('audio');
+var tracksong = document.getElementById('audio');
 document.getElementById('play').addEventListener("click", function(e){ //event listener for play button
-	track.play();
+	tracksong.play();
 })
 document.getElementById('stop').addEventListener("click", function(e){ //event listener for stop button
-	track.pause();
-	track.currentTime = 0;
+	tracksong.pause();
+	tracksong.currentTime = 0;
 })
+
 
 
 

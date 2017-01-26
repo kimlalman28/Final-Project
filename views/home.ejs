@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="/style.css">
   <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-  <title>HI</title>
+  <title>Song Search</title>
 </head>
 <body>
 
 <div id="menu">
 	<nav>
 	<ul>
-		<li><a href="/home">Song Search</a></li>
-		<li><a href="/purchasedsongs">Purchased Songs</a></li>
+		<li><a href="/songsearch">Song Search</a></li>
+		<li><a href="/addedsongs">Added Songs</a></li>
 	</ul>
 	</nav>
 
 
 	<div id="form">
 		<h2>SEARCH FOR A SONG</h2>
-		<form action="/home">
+		<form action="/songsearch">
 			<input type="text" name="song" placeholder="Enter: ">
 			<br>
 			<input type="submit" name="Search" value="Search">
@@ -38,10 +38,10 @@
 		
 		<div class="divs">
 			<h1 id="song"></h1>
-			<h2 id="artist"></h2>
-			<h3 id="album"></h3>
-			<h4 id="price"></h4>
-			<form action="/home" method="POST" id="add">
+			<h1 id="artist"></h1>
+			<h1 id="album"></h1>
+			<h1 id="price"></h1>
+			<form action="/songsearch" method="POST" id="add">
 				<input type="submit" name="buy" value="ADD">
 			</form>
 		</div>	
@@ -49,8 +49,8 @@
 		
 		<div class="divs">
 			<h2>Preview</h2>
-			<button id="play"><i class= "fa fa-play-circle fa-3x" aria-hidden="true"></i></button>
-			<button id="stop"><i class= "fa fa-stop-circle-o fa-3x" aria-hidden="true"></i></button>
+			<button id="play"><i class= "fa fa-play-circle fa-5x" aria-hidden="true"></i></button>
+			<button id="stop"><i class= "fa fa-stop-circle-o fa-5x" aria-hidden="true"></i></button>
 			
 			
 		</div>

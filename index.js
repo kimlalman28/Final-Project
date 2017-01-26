@@ -12,20 +12,27 @@ app.set('views', './views')
 
 var DATABASE_URL = process.env.DATABASE_URL ||'postgres://' + process.env.POSTGRES_USER + ':' + process.env.POSTGRES_PASSWORD + '@localhost/songs';
 
-app.get('/home', function(req, res){
+
+app.get('/', function(req, res){
+	res.redirect('/songsearch')
+})
+
+app.get('/songsearch', function(req, res){
 	res.render('home');
 })
 
-app.post('/home', function(req, res){
+
+
+app.post('/songsearch', function(req, res){
 	pg.connect(DATABASE_URL, function(err, client, done){
-		client.query(`insert into purchased (song, artist, price) values ('${req.body.song}', '${req.body.artist}', '${req.body.price}')`, function(err, result){
+		client.query(`insert into purchased (song, artist, price, buyinfo) values ('${req.body.song}', '${req.body.artist}', '${req.body.price}', '${req.body.buyinfo}')`, function(err, result){
 			done();
 			pg.end();
 		})
 	})
 })
 
-app.get('/purchasedsongs', function(req, res){
+app.get('/addedsongs', function(req, res){
 	pg.connect(DATABASE_URL, function(err, client, done){
 		client.query(`select * from purchased`, function(err, result){
 			res.render('purchasedsongs', {data: result.rows});
@@ -34,6 +41,10 @@ app.get('/purchasedsongs', function(req, res){
 		})
 		
 	})
+})
+
+app.get('*', function(req, res){
+	res.status(404).send("Page not found! Try route to /home" )
 })
 
 app.listen(3000, function(){

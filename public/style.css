@@ -1,10 +1,10 @@
 body{
-	background-color: steelblue;
+	background-color: black;
 	margin: 0;
 }
 
 #menu{
-	background-image: url(https://static.pexels.com/photos/12544/pexels-photo-12544.jpeg);
+	background-repeat: no-repeat;
 	height: 100vh;
 	background-size: cover;
 	overflow: auto;
@@ -30,26 +30,30 @@ li a {
     text-align: center;
     padding: 16px 18px;
     text-decoration: none;
-    font-family: verdana;
+    font-family: Consolas, monaco, monospace;
     font-size: 17px;
 }
 
 li a:hover {
-    background-color: hotpink;
+    color: hotpink;
 }
 
 h2{
 	text-align: center;
 	color: oldlace;
+	text-shadow: 4px 4px 6px hotpink;
 	font-size: 40px;
-	font-family: verdana;
+	font-family: Consolas, monaco, monospace;
+	letter-spacing: .15em;
 }
 
 #song, #album, #artist, #price{
 	text-align: center;
 	font-size: 30px;
 	color: white;
-	font-family: verdana;
+	text-shadow: 2px 2px 4px hotpink;
+	font-family: Consolas, monaco, monospace;
+	line-height: 30px;
 }
 
 
@@ -59,13 +63,13 @@ h2{
 	left: 50%;
 	top: 50%;
 	text-transform: 
-	font-size: 25px;
-	font-family: verdana;
+	font-size: 30px;
+	font-family: Consolas, monaco, monospace;
 	transform: translate(-50%, -50%);
 }
 
 #songinfo{
-	background-color: hsla(188, 60%, 0%, .4);
+	background-color: hsla(333, 4%, 24%, .6);
 	margin: 0 auto;
 	overflow: auto;
 	display: inline-block;
@@ -85,8 +89,18 @@ input[type=submit]{
 input[type=text]{
 	padding: 10px;
 	color: hotpink;
-	font-family: verdana;
+	font-family: Consolas, monaco, monospace;
 	font-size: 15px;
+}
+
+#ilink{
+	text-decoration: none;
+	color: black;
+
+}
+
+#ilink:hover{
+	color: hotpink;
 }
 
 table {
@@ -97,13 +111,24 @@ table {
 th, td {
     text-align: left;
     padding: 8px;
+    font-family: Consolas, monaco, monospace;
+    font-size: 20px;
+    color: black;
 }
 
-tr:nth-child(even){background-color: lightpink}
+tr:nth-child(even){
+	background-color: hsla(336, 42%, 68%, .6);
+}
+
+tr:nth-child(odd){
+	background-color: hsla(328, 20%, 44%, .6);
+}
 
 th {
     background-color: hotpink;
+    opacity: .6;
     color: white;
+    font-size: 25px;
 }
 
 button{
