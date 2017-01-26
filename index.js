@@ -12,28 +12,28 @@ app.set('view engine', 'ejs'); //to use ejs
 app.set('views', './views')
 
 var DATABASE_URL = process.env.DATABASE_URL ||'postgres://' + process.env.POSTGRES_USER + ':' + process.env.POSTGRES_PASSWORD + '@localhost/songs';
-
+//use both heroku and localhost
 
 app.get('/', function(req, res){
-	res.redirect('/songsearch')
-})
+	res.redirect('/mediasearch')
+}) //no route will redirect to search page
 
-app.get('/songsearch', function(req, res){
+app.get('/mediasearch', function(req, res){
 	res.render('home');
 })
 
 
 
-app.post('/songsearch', function(req, res){
+app.post('/mediasearch', function(req, res){
 	pg.connect(DATABASE_URL, function(err, client, done){
-		client.query(`insert into purchased (song, artist, price, buyinfo) values ('${req.body.song}', '${req.body.artist}', '${req.body.price}', '${req.body.buyinfo}')`, function(err, result){
+		client.query(`insert into purchased (media, song, artist, price, buyinfo) values ('${req.body.type}','${req.body.song}', '${req.body.artist}', '${req.body.price}', '${req.body.buyinfo}')`, function(err, result){
 			done();
 			pg.end();
-		})
+		}) //inserts data into database from api call
 	})
 })
 
-app.get('/addedsongs', function(req, res){
+app.get('/addedmedia', function(req, res){
 	pg.connect(DATABASE_URL, function(err, client, done){
 		client.query(`select * from purchased`, function(err, result){
 			res.render('purchasedsongs', {data: result.rows});
@@ -45,7 +45,7 @@ app.get('/addedsongs', function(req, res){
 })
 
 app.get('*', function(req, res){
-	res.status(404).send("Page not found! Try route to /home" )
+	res.status(404).send("Page not found! Try route to /mediasearch" ) //wildcard get request
 })
 
 app.listen(port, function(){

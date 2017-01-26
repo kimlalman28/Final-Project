@@ -41,13 +41,13 @@ li a:hover {
 h2{
 	text-align: center;
 	color: oldlace;
-	text-shadow: 4px 4px 6px hotpink;
-	font-size: 40px;
+	text-shadow: 6px 6px 6px hotpink;
+	font-size: 50px;
 	font-family: Consolas, monaco, monospace;
-	letter-spacing: .15em;
+	letter-spacing: .20em;
 }
 
-#song, #album, #artist, #price{
+#song, #album, #artist, #price, #preview{
 	text-align: center;
 	font-size: 30px;
 	color: white;
@@ -91,6 +91,16 @@ input[type=text]{
 	color: hotpink;
 	font-family: Consolas, monaco, monospace;
 	font-size: 15px;
+	border: solid;
+	border-color: pink;
+}
+
+label{
+	padding: 10px;
+	color: white;
+	text-shadow: 2px 2px 4px hotpink;
+	font-family: Consolas, monaco, monospace;
+	font-size: 20px;
 }
 
 #ilink{
@@ -117,16 +127,15 @@ th, td {
 }
 
 tr:nth-child(even){
-	background-color: hsla(336, 42%, 68%, .6);
+	background-color: hsla(336, 42%, 68%, .7);
 }
 
 tr:nth-child(odd){
-	background-color: hsla(328, 20%, 44%, .6);
+	background-color: hsla(328, 20%, 44%, .7);
 }
 
 th {
-    background-color: hotpink;
-    opacity: .6;
+    background-color: hsla(312, 76%, 29%, 1.0);
     color: white;
     font-size: 25px;
 }
@@ -145,4 +154,8 @@ button{
 #songcover{
 	width: 70%;
 	margin: 0 auto;
+}
+
+input[type=radio]:checked{
+  color: pink
 }

@@ -6,23 +6,28 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="/style.css">
   <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-  <title>Song Search</title>
+  <title>Media Search</title>
 </head>
 <body>
 
 <div id="menu">
 	<nav>
 	<ul>
-		<li><a href="/songsearch">Song Search</a></li>
-		<li><a href="/addedsongs">Added Songs</a></li>
+		<li><a href="/mediasearch">Media Search</a></li>
+		<li><a href="/addedmedia">Added Media</a></li>
 	</ul>
 	</nav>
 
 
 	<div id="form">
-		<h2>SEARCH FOR A SONG</h2>
-		<form action="/songsearch">
+		<h2>SEARCH</h2>
+		<form action="/mediasearch" id="myForm">
 			<input type="text" name="song" placeholder="Enter: ">
+			<br>
+			<input type="radio" name="media" value="Music">
+				<label for="media1">Music</label>
+			<input type="radio" name="media" value="App">
+				<label for="media2">App</label>
 			<br>
 			<input type="submit" name="Search" value="Search">
 		</form>
@@ -41,16 +46,16 @@
 			<h1 id="artist"></h1>
 			<h1 id="album"></h1>
 			<h1 id="price"></h1>
-			<form action="/songsearch" method="POST" id="add">
+			<form action="/mediasearch" method="POST" id="add">
 				<input type="submit" name="buy" value="ADD">
 			</form>
 		</div>	
 
 		
 		<div class="divs">
-			<h2>Preview</h2>
+			<h1 id="preview">Preview</h1>
 			<button id="play"><i class= "fa fa-play-circle fa-5x" aria-hidden="true"></i></button>
-			<button id="stop"><i class= "fa fa-stop-circle-o fa-5x" aria-hidden="true"></i></button>
+			<button id="stop"><i class= "fa fa-stop-circle fa-5x" aria-hidden="true"></i></button>
 			
 			
 		</div>

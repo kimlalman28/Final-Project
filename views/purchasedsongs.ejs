@@ -5,30 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="/style.css">
-  <title>Added Songs</title>
+  <title>Added Media</title>
 </head>
 <body>
 
 <div id="menu">
 	<nav>
 	<ul>
-		<li><a href="/songsearch">Song Search</a></li>
-		<li><a href="/addedsongs">Added Songs</a></li>
+		<li><a href="/mediasearch">Media Search</a></li>
+		<li><a href="/addedmedia">Added Media</a></li>
 	</ul>
 	</nav>
 
-<h2>Added Songs</h2>
+<h2>Added Media</h2>
 	<table>
-	<th>Song</th>
-	<th>Artist</th>
+	<th>Media</th>
+	<th>Title</th>
+	<th>Artist/Developer</th>
 	<th>Price</th>
 	<th>iTunes Link</th>
 	<% for(var i=(data.length-1); i>=0; i--) { %>
 		<tr>
-		<td><%= data[i].song %></td>
+		<td><%=data[i].media%></td>
+		<td><%=data[i].song%></td>
 		<td><%=data[i].artist%></td>
 		<td><%=data[i].price%></td>
-		<td><a href="<%= data[i].buyinfo %>" id="ilink" target="_blank">Check out on iTunes</a></td>
+		<td><a href="<%= data[i].buyinfo %>" id="ilink" target="_blank">View in iTunes</a></td>
 		</tr>
 	<% } %>
 </table>
